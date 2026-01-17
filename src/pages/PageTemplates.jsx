@@ -1,59 +1,51 @@
 import { useParams } from "react-router-dom";
+import SEO from "@/components/SEO";
+import Schema from "@/components/Schema";
+import { siteContent, siteMeta } from "@/lib/content";
 
-/* ======================================================
-   SHARED BASE RENDERER
-   ====================================================== */
+const findBySlug = (collection, slug) =>
+  Object.values(collection).find((item) => item.slug === slug);
 
-function BasePage({ title }) {
-  const { slug } = useParams();
+function PageWrapper({ data }) {
+  const canonical = `${siteMeta.domain}${location.pathname}`;
 
   return (
-    <main className="container mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
+    <>
+      <SEO
+        title={data.seo.title}
+        description={data.seo.description}
+        canonical={canonical}
+      />
+      <Schema type={data.seo.schemaType} data={data} />
 
-      {slug && (
-        <p className="text-lg text-muted-foreground">
-          Slug: <span className="font-mono">{slug}</span>
-        </p>
-      )}
-
-      <p className="mt-6 max-w-3xl text-base">
-        This page is rendering correctly. Programmatic SEO and dynamic content
-        will be layered on top next.
-      </p>
-    </main>
+      <section className="pt-32 max-w-6xl mx-auto px-6">
+        <h1 className="text-4xl font-bold">{data.title}</h1>
+        <p className="mt-4 text-lg text-gray-600">{data.summary}</p>
+      </section>
+    </>
   );
 }
 
-/* ======================================================
-   SOLUTIONS ( /solutions/:slug )
-   ====================================================== */
 export function SolutionPage() {
-  return <BasePage title="Solution Page" />;
+  const { slug } = useParams();
+  const data = findBySlug(siteContent.solutions, slug);
+  return data ? <PageWrapper data={data} /> : null;
 }
 
-/* ======================================================
-   INDUSTRIES ( /industries/:slug )
-   ====================================================== */
 export function IndustryPage() {
-  return <BasePage title="Industry Page" />;
+  const { slug } = useParams();
+  const data = findBySlug(siteContent.industries, slug);
+  return data ? <PageWrapper data={data} /> : null;
 }
 
-/* ======================================================
-   COMPANY ( /company/:slug )
-   ====================================================== */
 export function CompanyPage() {
-  return <BasePage title="Company Page" />;
+  const { slug } = useParams();
+  const data = findBySlug(siteContent.company, slug);
+  return data ? <PageWrapper data={data} /> : null;
 }
 
-/* ======================================================
-   WORK ( /work/:slug )
-   ====================================================== */
 export function WorkPage() {
-  return <BasePage title="Work Page" />;
+  const { slug } = useParams();
+  const data = findBySlug(siteContent.work, slug);
+  return data ? <PageWrapper data={data} /> : null;
 }
-
-/* ======================================================
-   DEFAULT EXPORT (NOT USED, SAFETY ONLY)
-   ====================================================== */
-export default SolutionPage;

@@ -1,91 +1,88 @@
 // src/lib/content.js
 
-/* ======================================================
-   GLOBAL SITE CONTENT (BACKWARD COMPATIBLE)
-   ====================================================== */
-
-export const siteContent = {
-  company: {
-    name: "MillenniumAI",
-    legalName: "MillenniumAI Private Limited",
-    description:
-      "MillenniumAI is a global AI data services company delivering enterprise-grade data annotation, NLP, and machine learning solutions for scalable AI systems.",
-  },
-
-  contact: {
-    email: "info@millenniumai.com",
-    website: "https://www.millenniumai.com",
-  },
+export const siteMeta = {
+  brand: "MillenniumAI",
+  domain: "https://www.millenniumai.com",
+  defaultImage: "/og-default.jpg",
 };
 
-/* ======================================================
-   SOLUTIONS (PROGRAMMATIC SEO ENABLED)
-   ====================================================== */
-
-export const solutions = [
-  {
-    slug: "nlp",
-    title: "Natural Language Processing",
-    summary:
-      "High-quality NLP data annotation and language AI services for enterprise applications.",
-
-    seo: {
-      title: "NLP Data Annotation & Language AI Services",
-      description:
-        "Enterprise NLP data annotation services including named entity recognition, sentiment analysis, text classification, and LLM fine-tuning.",
-      canonical: "https://www.millenniumai.com/solutions/nlp",
+export const siteContent = {
+  /* =========================
+     SOLUTIONS
+  ========================= */
+  solutions: {
+    nlp: {
+      slug: "nlp",
+      title: "Natural Language Processing (NLP)",
+      summary: "Enterprise NLP data annotation & LLM training services.",
+      body: "Text classification, NER, sentiment analysis, LLM fine-tuning.",
+      seo: {
+        title: "NLP Data Annotation Services | MillenniumAI",
+        description:
+          "Scalable NLP data annotation for LLMs, chatbots, and enterprise AI.",
+        schemaType: "Service",
+      },
     },
 
-    hero: {
-      heading: "Enterprise NLP Data Services",
-      subheading:
-        "Build accurate language models with expertly annotated multilingual text data.",
-    },
-  },
-
-  {
-    slug: "computer-vision",
-    title: "Computer Vision",
-    summary:
-      "Image and video annotation services for advanced computer vision AI systems.",
-
-    seo: {
-      title: "Computer Vision Data Annotation Services",
-      description:
-        "High-precision image and video annotation services including bounding boxes, segmentation, and keypoint labeling.",
-      canonical: "https://www.millenniumai.com/solutions/computer-vision",
+    generativeAI: {
+      slug: "generative-ai",
+      title: "Generative AI",
+      summary: "High-quality datasets for generative AI systems.",
+      body: "Prompt engineering, RLHF, instruction tuning.",
+      seo: {
+        title: "Generative AI Data Services | MillenniumAI",
+        description:
+          "Training datasets and RLHF services for generative AI platforms.",
+        schemaType: "Service",
+      },
     },
 
-    hero: {
-      heading: "Computer Vision Data Annotation",
-      subheading:
-        "Train robust visual AI systems with expertly labeled image and video datasets.",
-    },
-  },
-];
-
-/* ======================================================
-   INDUSTRIES (PROGRAMMATIC SEO ENABLED)
-   ====================================================== */
-
-export const industries = [
-  {
-    slug: "healthcare",
-    title: "Healthcare & Life Sciences",
-    summary:
-      "AI data solutions supporting medical imaging, diagnostics, and healthcare analytics.",
-
-    seo: {
-      title: "AI Data Solutions for Healthcare & Life Sciences",
-      description:
-        "Secure and compliant AI data annotation services for healthcare, medical imaging, diagnostics, and life sciences research.",
-      canonical: "https://www.millenniumai.com/industries/healthcare",
+    computerVision: {
+      slug: "computer-vision",
+      title: "Computer Vision",
+      summary: "Vision annotation for autonomous and retail AI.",
+      body: "Bounding boxes, segmentation, video labeling.",
+      seo: {
+        title: "Computer Vision Annotation Services | MillenniumAI",
+        description:
+          "High-accuracy computer vision annotation for AI applications.",
+        schemaType: "Service",
+      },
     },
 
-    hero: {
-      heading: "AI for Healthcare & Life Sciences",
-      subheading:
-        "Trusted AI data services powering innovation in healthcare and medical research.",
+    speechAudio: {
+      slug: "speech-audio",
+      title: "Speech & Audio AI",
+      summary: "Speech recognition & audio data annotation.",
+      body: "ASR, TTS, speaker diarization.",
+      seo: {
+        title: "Speech & Audio Data Annotation | MillenniumAI",
+        description:
+          "Multilingual speech annotation for voice-enabled AI systems.",
+        schemaType: "Service",
+      },
     },
   },
-];
+
+  /* =========================
+     INDUSTRIES
+  ========================= */
+  industries: {
+    healthcare: {
+      slug: "healthcare",
+      title: "Healthcare & Life Sciences",
+      summary: "HIPAA-compliant medical data annotation.",
+      seo: {
+        title: "Healthcare AI Data Annotation | MillenniumAI",
+        description:
+          "Secure medical data annotation for healthcare AI solutions.",
+        schemaType: "Industry",
+      },
+    },
+
+    finance: {
+      slug: "finance",
+      title: "FinTech & Banking",
+      summary: "AI datasets for fraud & compliance.",
+      seo: {
+        title: "FinTech A
