@@ -1,88 +1,75 @@
-// src/lib/content.js
+/* =========================
+   INSIGHTS / BLOG
+========================= */
 
-export const siteMeta = {
-  brand: "MillenniumAI",
-  domain: "https://www.millenniumai.com",
-  defaultImage: "/og-default.jpg",
-};
-
-export const siteContent = {
-  /* =========================
-     SOLUTIONS
-  ========================= */
-  solutions: {
-    nlp: {
-      slug: "nlp",
-      title: "Natural Language Processing (NLP)",
-      summary: "Enterprise NLP data annotation & LLM training services.",
-      body: "Text classification, NER, sentiment analysis, LLM fine-tuning.",
+siteContent.insights = {
+  categories: {
+    aiData: {
+      slug: "ai-data",
+      title: "AI Data Annotation",
+      description:
+        "Trends, best practices, and insights in AI data annotation.",
       seo: {
-        title: "NLP Data Annotation Services | MillenniumAI",
+        title: "AI Data Annotation Insights | MillenniumAI",
         description:
-          "Scalable NLP data annotation for LLMs, chatbots, and enterprise AI.",
-        schemaType: "Service",
+          "Expert insights on AI data annotation, labeling strategies, and quality frameworks.",
+        schemaType: "CollectionPage",
       },
     },
 
     generativeAI: {
       slug: "generative-ai",
       title: "Generative AI",
-      summary: "High-quality datasets for generative AI systems.",
-      body: "Prompt engineering, RLHF, instruction tuning.",
+      description:
+        "Insights on LLMs, generative AI training, and RLHF.",
       seo: {
-        title: "Generative AI Data Services | MillenniumAI",
+        title: "Generative AI Insights | MillenniumAI",
         description:
-          "Training datasets and RLHF services for generative AI platforms.",
-        schemaType: "Service",
-      },
-    },
-
-    computerVision: {
-      slug: "computer-vision",
-      title: "Computer Vision",
-      summary: "Vision annotation for autonomous and retail AI.",
-      body: "Bounding boxes, segmentation, video labeling.",
-      seo: {
-        title: "Computer Vision Annotation Services | MillenniumAI",
-        description:
-          "High-accuracy computer vision annotation for AI applications.",
-        schemaType: "Service",
-      },
-    },
-
-    speechAudio: {
-      slug: "speech-audio",
-      title: "Speech & Audio AI",
-      summary: "Speech recognition & audio data annotation.",
-      body: "ASR, TTS, speaker diarization.",
-      seo: {
-        title: "Speech & Audio Data Annotation | MillenniumAI",
-        description:
-          "Multilingual speech annotation for voice-enabled AI systems.",
-        schemaType: "Service",
+          "Articles on generative AI, LLM training, and instruction tuning.",
+        schemaType: "CollectionPage",
       },
     },
   },
 
-  /* =========================
-     INDUSTRIES
-  ========================= */
-  industries: {
-    healthcare: {
-      slug: "healthcare",
-      title: "Healthcare & Life Sciences",
-      summary: "HIPAA-compliant medical data annotation.",
+  articles: {
+    scalableAnnotation: {
+      slug: "scalable-data-annotation",
+      category: "ai-data",
+      title: "How to Scale AI Data Annotation Without Losing Quality",
+      excerpt:
+        "Scaling AI data annotation requires strong QA pipelines and workforce orchestration.",
+      publishedAt: "2025-01-10",
+      author: "MillenniumAI Research",
       seo: {
-        title: "Healthcare AI Data Annotation | MillenniumAI",
+        title:
+          "How to Scale AI Data Annotation Without Losing Quality | MillenniumAI",
         description:
-          "Secure medical data annotation for healthcare AI solutions.",
-        schemaType: "Industry",
+          "Learn how enterprises scale AI data annotation while maintaining accuracy and compliance.",
+        schemaType: "BlogPosting",
       },
+      content: `
+        <p>Scaling data annotation is one of the biggest challenges in AI development...</p>
+        <p>This article explains best practices for quality control, workforce scaling, and governance.</p>
+      `,
     },
 
-    finance: {
-      slug: "finance",
-      title: "FinTech & Banking",
-      summary: "AI datasets for fraud & compliance.",
+    rlhfExplained: {
+      slug: "rlhf-explained",
+      category: "generative-ai",
+      title: "RLHF Explained: Training Better Generative AI Models",
+      excerpt:
+        "Reinforcement Learning from Human Feedback (RLHF) is essential for safe AI.",
+      publishedAt: "2025-01-15",
+      author: "MillenniumAI Research",
       seo: {
-        title: "FinTech A
+        title: "RLHF Explained | Training Better Generative AI Models",
+        description:
+          "Understand how RLHF improves LLM alignment, safety, and performance.",
+        schemaType: "BlogPosting",
+      },
+      content: `
+        <p>RLHF is a technique used to align AI models with human expectations...</p>
+      `,
+    },
+  },
+};
