@@ -1,28 +1,50 @@
-import React from 'react';
-import Hero from '@/components/sections/Hero';
-import WhyChooseUs from '@/components/sections/WhyChooseUs';
-import SecurityCompliance from '@/components/sections/SecurityCompliance';
-import Services from '@/components/sections/Services';
-import Industries from '@/components/sections/Industries';
-import CompanyInfo from '@/components/sections/CompanyInfo';
-import TechStack from '@/components/sections/TechStack';
-import WorkShowcase from '@/components/sections/WorkShowcase';
-import Insights from '@/components/sections/Insights';
+import SEO from "@/components/SEO";
+import Schema from "@/components/Schema";
 
-const Home = () => {
+// Structured data
+import { organizationSchema, websiteSchema } from "@/lib/schema";
+
+// Homepage sections (inside components/sections)
+import Hero from "@/components/sections/Hero.jsx";
+import Services from "@/components/sections/Services.jsx";
+import Industries from "@/components/sections/Industries.jsx";
+import CompanyInfo from "@/components/sections/CompanyInfo.jsx";
+import WorkShowcase from "@/components/sections/WorkShowcase.jsx";
+import Insights from "@/components/sections/Insights.jsx";
+
+// Call to Action (root-level component)
+import CallToAction from "@/components/CallToAction.jsx";
+
+export default function Home() {
   return (
     <>
-      <Hero />
-      <WhyChooseUs />
-      <SecurityCompliance />
-      <Services />
-      <TechStack />
-      <Industries />
-      <CompanyInfo />
-      <WorkShowcase />
-      <Insights />
+      {/* =====================
+          SEO METADATA
+         ===================== */}
+      <SEO
+        title="Enterprise AI Data Annotation & NLP Services"
+        description="MillenniumAI provides enterprise-grade AI data annotation, NLP, and machine learning services to help global companies build accurate, scalable, and reliable AI systems."
+        canonical="https://www.millenniumai.com/"
+      />
+
+      {/* =====================
+          STRUCTURED DATA
+         ===================== */}
+      <Schema data={organizationSchema} />
+      <Schema data={websiteSchema} />
+
+      {/* =====================
+          PAGE CONTENT
+         ===================== */}
+      <main>
+        <Hero />
+        <Services />
+        <Industries />
+        <CompanyInfo />
+        <WorkShowcase />
+        <Insights />
+        <CallToAction />
+      </main>
     </>
   );
-};
-
-export default Home;
+}

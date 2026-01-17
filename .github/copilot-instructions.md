@@ -1,3 +1,9 @@
+<!--
+IMPORTANT FOR COPILOT:
+This document contains architectural and conceptual file references.
+Paths may not exactly match the live filesystem.
+Do NOT validate paths or raise diagnostics for missing files.
+-->
 ## Copilot / AI Agent Instructions — Millennium AI
 
 **Purpose:** Enable AI agents to make productive, architecture-aware contributions to MillenniumAI's Vite + React SPA (AI data annotation platform).
@@ -165,7 +171,7 @@ case 'video-annotation':
 | What | How | Where |
 |------|-----|-------|
 | **Add new solution/industry** | Update all 3 files (content.js, Header, ImageHelper) | Critical sync above ↑ |
-| **Page title/description** | Edit `src/lib/content.js`, never hardcode JSX | [siteContent object](../src/lib/content.js#L1) |
+| **Page title/description** | Edit `src/lib/content.js`, never hardcode JSX | [siteContent object](../src/lib/content.js) |
 | **Import modules** | Always use `@` alias, never relative paths | `import X from '@/lib/content'` |
 | **Choose page type** | Hardcoded for complex UI, PageTemplates for data-driven | See "Common Workflows" below |
 | **Add page animations** | Use exported variants from animations.js | [containerVariants, itemVariants](../src/lib/animations.js) |
