@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Cpu, Globe, Lock, Zap } from 'lucide-react';
+import { CheckCircle2, Cpu, Globe, Lock, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { itemVariants, sectionHeaderVariants, viewportSettings, containerVariants } from '@/lib/animations';
+import { itemVariants, viewportSettings, containerVariants, sectionHeaderVariants } from '@/lib/animations';
 import { Helmet } from 'react-helmet';
+import PageHeader from '@/components/layout/PageHeader';
 
 const HealthcareSolutions = () => {
   const navigate = useNavigate();
@@ -83,18 +84,17 @@ const HealthcareSolutions = () => {
               </Helmet>
 
               <div className="min-h-screen bg-background">
-                {/* HERO */}
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background"></div>
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">Healthcare & Life Sciences</h1>
-                    <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">Clinician-expert annotation and regulatory-grade datasets for medical imaging, pathology and clinical AI.</p>
-                    <div className="flex gap-4 justify-center flex-wrap">
-                      <Button onClick={() => navigate('/contact')} className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2">Start Your Project <ArrowRight className="w-4 h-4" /></Button>
-                      <Button variant="outline" onClick={() => navigate('/company/about')} className="border-border text-foreground px-8 py-3 rounded-lg hover:bg-secondary">Learn More</Button>
-                    </div>
+                <PageHeader
+                  variant="industries"
+                  subtitle="HEALTHCARE & LIFE SCIENCES"
+                  title="Healthcare & Life Sciences"
+                  description="Clinician-expert annotation and regulatory-grade datasets for medical imaging, pathology and clinical AI."
+                >
+                  <motion.div className="flex gap-4 justify-center flex-wrap">
+                    <Button onClick={() => navigate('/contact')} className="bg-white text-purple-900 hover:bg-purple-50 font-bold px-8 py-3">Start Your Project</Button>
+                    <Button variant="outline" onClick={() => navigate('/company/about')} className="border-white text-white hover:bg-purple-800 px-8 py-3">Learn More</Button>
                   </motion.div>
-                </section>
+                </PageHeader>
 
                 {/* CORE CAPABILITIES */}
                 <section className="py-20 px-4 max-w-7xl mx-auto">

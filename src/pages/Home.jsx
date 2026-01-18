@@ -7,6 +7,7 @@ import { organizationSchema, websiteSchema } from "@/lib/schema";
 // Homepage sections (inside components/sections)
 import Hero from "@/components/sections/Hero.jsx";
 import Services from "@/components/sections/Services.jsx";
+import DataAnnotationWorkflow from "@/components/sections/DataAnnotationWorkflow.jsx";
 import Industries from "@/components/sections/Industries.jsx";
 import CompanyInfo from "@/components/sections/CompanyInfo.jsx";
 import WorkShowcase from "@/components/sections/WorkShowcase.jsx";
@@ -39,6 +40,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <DataAnnotationWorkflow />
         <Industries />
         <CompanyInfo />
         <WorkShowcase />

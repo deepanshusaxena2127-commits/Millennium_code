@@ -4,8 +4,11 @@ import { ArrowRight, CheckCircle2, BarChart3, Globe, Lock, Zap } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { itemVariants, sectionHeaderVariants, viewportSettings, containerVariants } from '@/lib/animations';
+import SEO from '@/components/SEO';
+import { siteContent, siteMeta } from '@/lib/content';
 
 const NLPSolutions = () => {
+  const seo = siteContent.solutions && siteContent.solutions['nlp'];
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState(0);
 
@@ -176,6 +179,11 @@ const NLPSolutions = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title={seo ? seo.seoTitle : `NLP Solutions | ${siteMeta.siteName}`}
+        description={seo ? seo.metaDescription : siteMeta.defaultDescription}
+        canonical={`${siteMeta.siteUrl}/solutions/nlp`}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 to-indigo-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">

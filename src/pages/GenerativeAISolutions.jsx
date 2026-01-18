@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, BarChart3, Globe, Lock, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { itemVariants, sectionHeaderVariants, viewportSettings, containerVariants } from '@/lib/animations';
+import { itemVariants, viewportSettings, containerVariants, sectionHeaderVariants } from '@/lib/animations';
 import { Helmet } from 'react-helmet';
+import PageHeader from '@/components/layout/PageHeader';
 
 const GenerativeAISolutions = () => {
   const navigate = useNavigate();
@@ -188,44 +189,30 @@ const GenerativeAISolutions = () => {
         <meta property="og:description" content="Enterprise training data solutions for large language models." />
       </Helmet>
       <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            variants={sectionHeaderVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-6 mb-12"
+      <PageHeader
+        variant="solutions"
+        subtitle="GENERATIVE AI SOLUTIONS"
+        title="Generative AI Training Data for Enterprise LLMs"
+        description="High-quality instruction, preference, and evaluation data for training, fine-tuning, and aligning Large Language Models. From RLHF to safety evaluation, we provide complete training data solutions with enterprise-grade quality and compliance."
+      >
+        <motion.div className="flex gap-4 justify-center">
+          <Button
+            onClick={() => navigate('/contact')}
+            size="lg"
+            className="bg-white text-blue-900 hover:bg-blue-50 font-bold"
           >
-            <div className="inline-block bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full px-4 py-1 text-sm font-semibold">
-              GENERATIVE AI SOLUTIONS
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Generative AI Training Data for Enterprise LLMs
-            </h1>
-            <p className="text-xl text-purple-100 max-w-3xl leading-relaxed">
-              High-quality instruction, preference, and evaluation data for training, fine-tuning, and aligning Large Language Models. From RLHF to safety evaluation, we provide complete training data solutions with enterprise-grade quality and compliance.
-            </p>
-            <motion.div variants={itemVariants} className="pt-4 flex gap-4">
-              <Button
-                onClick={() => navigate('/contact')}
-                size="lg"
-                className="bg-primary-foreground text-primary hover:opacity-90 font-bold"
-              >
-                Start Your LLM Project
-              </Button>
-              <Button
-                onClick={() => setActiveCategory(5)}
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-purple-800"
-              >
-                Explore Capabilities
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+            Start Your LLM Project
+          </Button>
+          <Button
+            onClick={() => setActiveCategory(0)}
+            variant="outline"
+            size="lg"
+            className="border-white text-white hover:bg-blue-800"
+          >
+            Explore Capabilities
+          </Button>
+        </motion.div>
+      </PageHeader>
 
       {/* Core Capabilities Grid */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary border-b border-border">

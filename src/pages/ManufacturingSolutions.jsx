@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Factory } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { itemVariants, sectionHeaderVariants, viewportSettings, containerVariants } from '@/lib/animations';
+import { itemVariants, viewportSettings, containerVariants, sectionHeaderVariants } from '@/lib/animations';
 import { Helmet } from 'react-helmet';
+import PageHeader from '@/components/layout/PageHeader';
 
 const ManufacturingSolutions = () => {
   const navigate = useNavigate();
@@ -250,34 +251,21 @@ const ManufacturingSolutions = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            variants={sectionHeaderVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-center space-y-8"
-          >
-            <div className="flex justify-center mb-6">
-              <Factory className="w-16 h-16 text-primary" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-black text-foreground">
-              Manufacturing
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Quality inspection, defect detection, predictive maintenance, and production optimization. Empower factory AI with expert-annotated manufacturing data.
-            </p>
-            <motion.div variants={itemVariants} className="flex gap-4 justify-center pt-8">
-              <Button onClick={() => navigate('/contact')} size="lg" className="bg-primary hover:bg-primary/90">
-                Start Manufacturing Project
-              </Button>
-              <Button onClick={() => navigate('/insights')} variant="outline" size="lg" className="border-border text-foreground">
-                Learn Manufacturing Best Practices
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        variant="industries"
+        subtitle="MANUFACTURING & INDUSTRIAL AI"
+        title="Manufacturing"
+        description="Quality inspection, defect detection, predictive maintenance, and production optimization. Empower factory AI with expert-annotated manufacturing data."
+      >
+        <motion.div className="flex gap-4 justify-center pt-4">
+          <Button onClick={() => navigate('/contact')} size="lg" className="bg-white text-green-900 hover:bg-green-50 font-bold">
+            Start Manufacturing Project
+          </Button>
+          <Button onClick={() => navigate('/insights')} variant="outline" size="lg" className="border-white text-white hover:bg-green-800">
+            Learn Manufacturing Best Practices
+          </Button>
+        </motion.div>
+      </PageHeader>
 
       {/* Categories Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
